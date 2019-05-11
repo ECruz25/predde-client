@@ -18,8 +18,10 @@ const StyledBooks = styled.div`
   width: 70vw;
   margin-left: 15vw;
   margin-right: 15vw;
+  margin-top: 2vw;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+  grid-gap: 50px;
+  
 `;
 
 const StyledBook = styled.div`
@@ -74,19 +76,19 @@ const Books = ({ history, match }) => {
   return (
     <>
       <Nav handleOnChange={handleOnChange} />
-      <StyledBooks>
+      <StyledBooks >
         {Object.keys(books).map(book => (
-          <Card style={{ height: '300px' }}>
-            <CardHeader title={books[book].name} />
+          <Card style={{ height: '300px'}}>
+            <CardHeader title={books[book].name}/>
             <CardMedia
               image={`/books/${books[book].image}`}
               title={books[book].name}
-              style={{ height: 0, paddingTop: '56.25%' }}
+              style={{ height: 0, paddingTop: '40%' }}
             />
             <CardContent
               style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
             >
-              <Typography component="p">
+              <Typography component="p" >
                 {`L. ${books[book].price.toFixed(2)}`}
               </Typography>
               <input
@@ -98,10 +100,11 @@ const Books = ({ history, match }) => {
               />
             </CardContent>
             <CardActions
-              style={{ display: 'flex', justifyItems: 'center' }}
+              style={{ display: 'flex', justifyItems: 'center',justifyContent: 'center' }}
               disableActionSpacing
             >
               <Button
+              
                 variant="contained"
                 size="medium"
                 color="primary"
@@ -112,8 +115,7 @@ const Books = ({ history, match }) => {
                     parseInt(quantity[books[book]._id] || 1)
                   )
                 }
-              >
-                Agregar al carrito
+              >Agregar al carrito
               </Button>
             </CardActions>
           </Card>
