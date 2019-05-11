@@ -83,7 +83,7 @@ const Books = ({ history, match }) => {
             <CardMedia
               image={`/books/${books[book].image}`}
               title={books[book].name}
-              style={{ height: 0, paddingTop: '40%' }}
+              style={{ height: 0, paddingTop: '50%' }}
             />
             <CardContent
               style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
