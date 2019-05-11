@@ -42,14 +42,12 @@ const Books = ({ history, match }) => {
     try {
       if (category !== undefined) {
         const response = await fetch(
-          `https://predde-client.herokuapp.com/api/books/category/${category}`
+          `https://predde.herokuapp.com/api/books/category/${category}`
         );
         const booksArray = await response.json();
         setBooks(booksArray);
       } else {
-        const response = await fetch(
-          'https://predde-client.herokuapp.com/api/books'
-        );
+        const response = await fetch('https://predde.herokuapp.com/api/books');
         const booksArray = await response.json();
         setBooks(booksArray);
       }

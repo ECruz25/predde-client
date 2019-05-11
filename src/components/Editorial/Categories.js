@@ -32,7 +32,7 @@ const Categories = ({ history }) => {
   const fetchCategories = async () => {
     try {
       const response = await fetch(
-        'https://predde-client.herokuapp.com/api/categories'
+        'https://predde.herokuapp.com/api/categories'
       );
       const categoriesList = await response.json();
       setCategories(categoriesList);

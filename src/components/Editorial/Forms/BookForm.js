@@ -22,9 +22,7 @@ const BookForm = ({ history }) => {
   }, []);
 
   const fetchCategories = async () => {
-    const response = await fetch(
-      'https://predde-client.herokuapp.com/api/categories'
-    );
+    const response = await fetch('https://predde.herokuapp.com/api/categories');
     const categoriesArray = await response.json();
     setCategories(categoriesArray);
   };

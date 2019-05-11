@@ -16,7 +16,7 @@ const CategoryForm = ({ history }) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        'https://predde-client.herokuapp.com/api/categories',
+        'https://predde.herokuapp.com/api/categories',
         {
           headers: {
             Accept: 'application/json',

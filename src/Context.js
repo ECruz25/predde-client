@@ -13,15 +13,13 @@ const ContextProvider = ({ children }) => {
 
   const fetchIsLoggedIn = () => {
     setTimeout(() => {
-      fetch('https://predde-client.herokuapp.com/api/isLoggedIn').then(
-        response => {
-          if (response.ok) {
-            setIsLoggedIn(true);
-          } else {
-            setIsLoggedIn(false);
-          }
+      fetch('https://predde.herokuapp.com/api/isLoggedIn').then(response => {
+        if (response.ok) {
+          setIsLoggedIn(true);
+        } else {
+          setIsLoggedIn(false);
         }
-      );
+      });
     }, 30000);
   };
 
