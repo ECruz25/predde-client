@@ -15,14 +15,17 @@ const CategoryForm = ({ history }) => {
   const submitForm = async e => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/categories', {
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        method: 'POST',
-        body: JSON.stringify({ description, name })
-      });
+      const response = await fetch(
+        'https://predde-client.herokuapp.com/api/categories',
+        {
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+          },
+          method: 'POST',
+          body: JSON.stringify({ description, name })
+        }
+      );
       console.log(response);
     } catch (error) {
       console.log(error);

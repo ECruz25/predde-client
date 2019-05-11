@@ -17,12 +17,15 @@ const LoginForm = ({ history }) => {
   const submitForm = async e => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/users/login', {
-        headers: { 'Content-type': 'application/json' },
-        method: 'POST',
-        body: JSON.stringify({ username, password })
-      });
-      await fetch('/api');
+      const response = await fetch(
+        'https://predde-client.herokuapp.com/api/users/login',
+        {
+          headers: { 'Content-type': 'application/json' },
+          method: 'POST',
+          body: JSON.stringify({ username, password })
+        }
+      );
+      await fetch('https://predde-client.herokuapp.com/api');
       console.log(response);
     } catch (error) {
       console.log(error);
