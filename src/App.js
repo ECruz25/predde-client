@@ -12,6 +12,8 @@ import Categories from './components/Editorial/Categories';
 import Books from './components/Editorial/Books';
 import BookForm from './components/Editorial/Forms/BookForm';
 import Cart from './components/Editorial/Cart';
+import Containers from './components/Containers';
+
 
 const StyledApp = styled.div`
   display: grid;
@@ -37,6 +39,7 @@ const App = () => (
       <Router>
         <StyledApp>
           <Switch>
+          <Route path="/" exact component={Containers}  />
             <Route path="/editorial/login" exact component={LoginForm} />
             <Route path="/editorial/categorias" exact component={Categories} />
             <Route
